@@ -1,0 +1,31 @@
+// the ~ allows you to reference things in node_modules
+
+$theme-colors: (
+    "dark": #111D4E
+);
+
+
+@import "~bootstrap/scss/bootstrap";
+
+.cover-container {
+    min-height: 100vh;
+}
+
+.bg-image {
+    background: url("../images/green-chameleon-s9CC2SKySJM-unsplash.jpg");
+    background-size: cover;
+    padding:180px 0px 200px 0px;
+}
+
+.bg-image h1 {
+    color: var(--light);
+    text-shadow: 2px 2px 5px var(--dark);
+}
+
+nav {
+    height: 4rem;
+}
+
+nav img {
+    height:2.5rem;
+}

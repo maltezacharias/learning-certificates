@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<h2 class="mt-5">Anmeldung</h2>
+<p class="my-3">Zum Anfordern eines e-Zertifikates für das Distance-Learning ist eine Anmeldung mit der Studierendenadresse erforderlich. Bitte gib im folgenden Formular deine Studierendenadresse ein, 
+wenn du dich noch nicht registriert hast, erhälst du automatisch eine e-Mail mit der du die Anmeldung bestätigen und dir ein Kennwort setzen kannst.</p>
+
+<form class="my-3">
+  <div class="form-group">
+    <label for="email">Studierendenadresse</label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">Bitte hier die Adresse im Format n01234567@students.meduniwien.ac.at eingeben.</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Anmelden</button>
+</form>
+
+{% endblock %}
