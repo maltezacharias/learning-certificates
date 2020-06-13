@@ -10,19 +10,19 @@ Automatically generate certificates to document students' learning progress from
 * Git
 * [Composer](https://getcomposer.org/doc/00-intro.md) 
 * [Symfony](https://symfony.com/download)
-* NodeJS and yarn (npm install -g yarn)
+* NodeJS and yarn (`npm install -g yarn`)
 
 ### Setup
 
-git clone https://github.com/maltezacharias/learning-certificates.git 
+`git clone https://github.com/maltezacharias/learning-certificates.git`
 
-cd /path/to/learning-certificates
+`cd /path/to/learning-certificates`
 
-composer install
+`composer install`
 
-yarn encore dev
+`yarn encore dev`
 
-symfony server:start
+`symfony server:start`
 
 
 ### Production
