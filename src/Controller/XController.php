@@ -7,7 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class XController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/", name="login")
      */
     public function list()
     {
