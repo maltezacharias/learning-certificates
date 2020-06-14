@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<h2 class="mt-5">Zertifikat herunterladen</h2>
+<p class="my-3">Folgende Einzelzertifikate sind zum Download bereitgestellt: </p>
+
+<br>
+
+<table class="table table-bordered table-hover">
+<thead class="thead-dark">
+  <tr>
+  <th>Datum</th>
+  <th>Lehrveranstaltung</th>
+  <th>Akad. Stunden</th>
+  <th>Download</th>
+  </tr>
+</thead>
+<tbody> <!--dummy data-->
+<form>
+  <tr><td>17.04.2020</td><td>Good Medical Morning</td><td>1 aS</td><td><button type="submit" class="btn btn-outline-primary">Herunterladen</button></td></tr>
+  <tr><td>22.05.2020</td><td>Talk in der Alumni Club-Lounge</td><td>1 aS</td><td><button type="submit" class="btn btn-outline-primary">Herunterladen</button></td></tr>
+  <tr><td>23.05.2020</td><td>Neurokonsil</td><td>1 aS</td><td><button type="submit" class="btn btn-outline-primary">Herunterladen</button></td></tr>
+  <tr><td>01.06.2020</td><td>Radiologisches Team-Meeting</td><td>1 aS</td><td><button type="submit" class="btn btn-outline-primary">Herunterladen</button></td></tr>
+</form>
+</tbody>
+</table>
+
+<br>
+<form>
+<table class="table table-borderless table-hover">
+<tr><td class="">
+<label for="semester">Zertifikat für den gesamten Zeitraum des Distance Learning herunterladen: </label>
+</td></tr>
+<tr><td>
+<select id="semester" name="semester">
+  <option value="20S">Sommersemester 2020</option>
+</select></td>
+<td><button type="submit" class="btn btn-primary">Herunterladen</button>
+</td></tr>
+</table>
+</form>
+
+{% endblock %}
