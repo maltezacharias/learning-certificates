@@ -4,14 +4,14 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class XController extends AbstractController
+class GetCertificateController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/GetCertificate", name="GetCertificate")
      */
     public function list()
     {
         $number = random_int(0, 100);
-        return $this->render('login.html.twig',[]);
+        return $this->render('getcertificate.html.twig',[]);
     }
 }

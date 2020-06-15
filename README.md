@@ -20,6 +20,8 @@ Automatically generate certificates to document students' learning progress from
 
 `composer install`
 
+`yarn install`
+
 `yarn encore dev`
 
 `symfony server:start`

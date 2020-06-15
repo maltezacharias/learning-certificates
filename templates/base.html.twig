@@ -28,10 +28,10 @@
               <a class="nav-link" href="#">Upload Bewertungen</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Zertifikate abrufen</a>
+              <a class="nav-link" href="{{ path('GetCertificate') }}">Zertifikate abrufen</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">Log-In</a>
+              <a class="nav-link" href="{{ path('login') }}">Log-In</a>
             </li>
           </ul>
         </div>
@@ -46,7 +46,9 @@
       </div>
     </main>  
     <footer>
-    <div class="text-light font-weight-light bg-dark p-4 text-center">Ein Projekt von Lukas Mokrusa und Malte Zacharias</div>
+    <p class="text-light font-weight-light bg-dark p-4 text-center">Ein Projekt von Lukas Mokrusa und Malte Zacharias<br>
+    PROTOTYP! NICHT MIT DER MEDIZINISCHEN UNIV. WIEN ASSOZIIERT
+    </p>
     </footer>
   </div>
   
