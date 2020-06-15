@@ -4,7 +4,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class XController extends AbstractController
+class LoginController extends AbstractController
 {
     /**
      * @Route("/", name="login")
