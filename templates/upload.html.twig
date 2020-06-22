@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<h2 class="mt-5">Upload Moodle-Bewertungslisten</h2>
+<p class="my-3">Moodle-Bewertungslisten (*.csv) können hier hochladen werden: </p>
+
+<br><br>  
+
+<table class="table table-borderless table-hover">
+<form action="" method="post">
+  <tr><td class="w-50">Kurswahl</td><td> 
+    <select id="Kurswahl" name="Kurswahl"> 
+      <option value="AMSP">Allgemeinmedizinische Sprechstunde</option>
+      <option value="ACSU">Alumni-Club Students Skill Update</option>
+      <option value="DLT">Distance Learning Tertialfälle</option>
+      <option value="GMM">Good Medical Morning</option>
+      <option value="IFK">Interdisziplinäre Fallkonferenz 20S</option>
+      <option value="KPSY">Konsil Psychiatrie</option>
+      <option value="ANAT">Living Anatomy</option>
+      <option value="NEUR">Neurokonsil</option>
+      <option value="RTM">Radiologisches Team-Meeting</option>
+      <option value="TACL">Talk in der Alumni-Club-Lounge</option>
+      <option value="WAMB">Webambulanz</option>
+    </select>
+    </td></tr>
+  <tr><td>Einheit</td><td> 
+    <select id="Kurstermin" name="Kurstermin">
+
+    </select>
+  </td></tr>
+  <tr><td><label for="fileupload">Datei auswählen</label></td><td> <input type="file" id="fileupload" name="fileupload"> </td></tr>
+  <tr class="table-warning"><td><label for="safety">Ich bestätige hiermit, die Eingaben gewissenhaft und genau gemacht, sowie die korrekte Datei ausgewählt zu haben.</label></td><td><input type="checkbox" id="safety" name="safety" value="yes" required> </td></tr>
+  <tr><td> </td><td> <button type="submit" class="btn btn-primary">Hochladen</button> </td></tr>
+
+</form>
+</table>
+
+
+<p id="hier">vorher</p>
+
+<br><br>
+<h3>FAQ/Tutorial/Info zum Download aus Moodle</h3><br>
+<ol>
+  <li>Zuerst X</li>
+  <li>Dann Y</li>
+  <li>Und Z</li>
+</ol>
+
+
+
+{% block javascripts %}
+  {{ parent() }}
+  {{ encore_entry_script_tags('Upload') }}
+{% endblock javascripts %}
+
+{% endblock %}
