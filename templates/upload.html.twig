@@ -9,6 +9,7 @@
 <form action="" method="post">
   <tr><td class="w-50">Kurswahl</td><td> 
     <select id="Kurswahl" name="Kurswahl"> 
+      <option value="" disabled selected>- Bitte erst hier auswählen -</option>
       <option value="AMSP">Allgemeinmedizinische Sprechstunde</option>
       <option value="ACSU">Alumni-Club Students Skill Update</option>
       <option value="DLT">Distance Learning Tertialfälle</option>
@@ -24,25 +25,23 @@
     </td></tr>
   <tr><td>Einheit</td><td> 
     <select id="Kurstermin" name="Kurstermin">
-
+      <option value="" disabled selected>- Bitte erst oben auswählen -</option>
     </select>
   </td></tr>
   <tr><td><label for="fileupload">Datei auswählen</label></td><td> <input type="file" id="fileupload" name="fileupload"> </td></tr>
   <tr class="table-warning"><td><label for="safety">Ich bestätige hiermit, die Eingaben gewissenhaft und genau gemacht, sowie die korrekte Datei ausgewählt zu haben.</label></td><td><input type="checkbox" id="safety" name="safety" value="yes" required> </td></tr>
-  <tr><td> </td><td> <button type="submit" class="btn btn-primary">Hochladen</button> </td></tr>
+  <tr><td> </td><td> <button type="submit" class="btn btn-primary">Hochladen</button> <button type="reset" class="btn btn-danger btn-sm">Zurücksetzen</button> </td></tr>
 
 </form>
 </table>
 
 
-<p id="hier">vorher</p>
-
 <br><br>
 <h3>FAQ/Tutorial/Info zum Download aus Moodle</h3><br>
 <ol>
-  <li>Zuerst X</li>
-  <li>Dann Y</li>
-  <li>Und Z</li>
+  <li>Zuerst X auswählen</li>
+  <li>Dann Y klicken</li>
+  <li>Und Z.csv herunterladen</li>
 </ol>
 
 
