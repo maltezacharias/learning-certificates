@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+
+  learning-certificates:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    tty: true
+    ports:
+      - '127.0.0.01:8000:8000'
+    container_name: lc
