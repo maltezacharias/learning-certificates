@@ -1,48 +1,275 @@
 // upload.js
-const $ = require('jquery');
-// jquery hier notwendig, da sonst Fehler in Konsole angezeigt wird
 
+// var courses = JSON.parse(courses_raw);
 
-/* 
-#Kurswahl: zB GMM
-#Kurstermin: zB Folge 3 (KW reicht nicht, da nicht alles wöchentlich vorkommt bzw. GMM mehrmals wöchentlich)
+document.addEventListener("DOMContentLoaded", () => {
+  // dynamically populate course names
+  let course_name_select = document.querySelector("#course_name");
+  for (let i=0; i < courses.length; i++) {
+    let courseoption = document.createElement("option");
+    courseoption.value = courses[i].course_number;
+    courseoption.text = courses[i].course_name;
+    course_name_select.appendChild(courseoption);
+  }
 
-  <option value="AMSP">Allgemeinmedizinische Sprechstunde</option>
-  <option value="ACSU">Alumni-Club Students Skill Update</option>
-  <option value="DLT">Distance Learning Tertialfälle</option>
-  <option value="GMM">Good Medical Morning</option>
-  <option value="IFK">Interdisziplinäre Fallkonferenz 20S</option>
-  <option value="KPSY">Konsil Psychiatrie</option>
-  <option value="ANAT">Living Anatomy</option>
-  <option value="NEUR">Neurokonsil</option>
-  <option value="RTM">Radiologisches Team-Meeting</option>
-  <option value="TACL">Talk in der Alumni-Club-Lounge</option>
-  <option value="WAMB">Webambulanz</option>
-*/
+  // dynamically populate lecture names for chosen course
+  let lecture_name_select = document.querySelector('#lecture_name');
+  course_name_select.addEventListener("change", function() {
+    let selected_course = this.value;
+    while (lecture_name_select.firstChild) {
+      lecture_name_select.removeChild(lecture_name_select.firstChild);
+    }
+    for (let j=0; j < courses[this.value].lectures.length; j++) {
+      let lectureoption = document.createElement("option");
+      lectureoption.value = courses[this.value].lectures[j].lecture_id;
+      lectureoption.text = courses[this.value].lectures[j].lecture_name;
+      lecture_name_select.appendChild(lectureoption);
+    }
 
-var kursdaten = {
-    "AMSP":[ "KW1","KW2","KW3" ], 
-    "ACSU":[ "ACSU1","ACSU2","ACSU3" ], 
-    "DLT":[ "DLT1","DLT2","DLT3" ], 
-    "GMM":[ "GMM vom Mo","GMM vom Mi","GMM vom Fr" ], 
-    "IFK":[ "IFK1","IFK2","IFK3" ], 
-    "KPSY":[ "KPSY1","KPSY2","KPSY3" ], 
-    "ANAT":[ "ANAT1","ANAT2","ANAT3" ], 
-    "NEUR":[ "NEUR1","NEUR2","NEUR3" ], 
-    "RTM":[ "RTM1","RTM2","RTM3" ], 
-    "TACL":[ "Talk 1 vom XX.XX.2020","Talk 2 vom XX.XX.2020","Talk 3" ], 
-    "WAMB":[ "WAMB1","WAMB2","WAMB3" ]
-};
-
-// var kursdaten = JSON.parse(kursdaten_roh);
-
-
-$(function(){
-    $("#Kurswahl").on("change", function() {
-        let ausgewaehlt = this.value; 
-        $("#Kurstermin").empty();
-        $.each(kursdaten[ausgewaehlt], function (index, value) { 
-            $("#Kurstermin").append("<option>" + value + "</option>"); 
-        });
-    });
+  });
 });
+
+let courses = [
+  {
+    "course_id": "AMSP",
+    "course_name": "Allgemeinmedizinische Sprechstunde",
+    "course_number": "0",
+    "lectures": [
+      {
+        "lecture_id": "AMSP1",
+        "lecture_name": "Allgemeinmed 1",
+        "lecture_date": "2020-04-01"
+      },
+      {
+        "lecture_id": "AMSP2",
+        "lecture_name": "Allgemeinmed 2",
+        "lecture_date": "2020-04-02"
+      },
+      {
+          "lecture_id": "AMSP3",
+          "lecture_name": "Allgemeinmed 3",
+          "lecture_date": "2020-04-03"
+        },
+    ]
+  },
+  {
+    "course_id": "ACSU",
+    "course_name": "Alumni-Club Students Skill Update",
+    "course_number": "1",
+    "lectures": [
+      {
+        "lecture_id": "ACSU1",
+        "lecture_name": "Skill 1",
+        "lecture_date": "2020-04-01"
+      },
+      {
+        "lecture_id": "ACSU2",
+        "lecture_name": "Skill 2",
+        "lecture_date": "2020-04-02"
+      },
+      {
+          "lecture_id": "ACSU3",
+          "lecture_name": "Skill 3",
+          "lecture_date": "2020-04-03"
+        },
+    ]
+  },
+  {
+    "course_id": "DLT",
+    "course_name": "Distance Learning Tertialfälle",
+    "course_number": "2",
+    "lectures": [
+      {
+        "lecture_id": "DLT1",
+        "lecture_name": "Tertialfälle 1",
+        "lecture_date": "2020-04-01"
+      },
+      {
+        "lecture_id": "DLT2",
+        "lecture_name": "Tertialfälle 2",
+        "lecture_date": "2020-04-02"
+      },
+      {
+          "lecture_id": "DLT3",
+          "lecture_name": "Tertialfälle 3",
+          "lecture_date": "2020-04-03"
+        },
+    ]
+  },
+  {
+    "course_id": "GMM",
+    "course_name": "Good Medical Morning",
+    "course_number": "3",
+    "lectures": [
+      {
+        "lecture_id": "GMM1",
+        "lecture_name": "GMM 1",
+        "lecture_date": "2020-04-01"
+      },
+      {
+        "lecture_id": "GMM2",
+        "lecture_name": "GMM 2",
+        "lecture_date": "2020-04-02"
+      },
+      {
+          "lecture_id": "GMM3",
+          "lecture_name": "GMM 3",
+          "lecture_date": "2020-04-03"
+        },
+    ]
+  },
+  {
+    "course_id": "IFK",
+    "course_name": "Interdisziplinäre Fallkonferenz 20S",
+    "course_number": "4",
+    "lectures": [
+      {
+        "lecture_id": "IFK1",
+        "lecture_name": "IFK 1",
+        "lecture_date": "2020-04-01"
+      },
+      {
+        "lecture_id": "IFK2",
+        "lecture_name": "IFK 2",
+        "lecture_date": "2020-04-02"
+      },
+      {
+          "lecture_id": "IFK3",
+          "lecture_name": "Thema 3",
+          "lecture_date": "2020-04-03"
+        },
+    ]
+  },
+  {
+    "course_id": "KPSY",
+    "course_name": "Konsil Psychiatrie",
+    "course_number": "5",
+    "lectures": [
+      {
+        "lecture_id": "KPSY1",
+        "lecture_name": "Psych 1",
+        "lecture_date": "2020-04-01"
+      },
+      {
+        "lecture_id": "KPSY2",
+        "lecture_name": "Psych 2",
+        "lecture_date": "2020-04-02"
+      },
+      {
+          "lecture_id": "KPSY3",
+          "lecture_name": "Psych 3",
+          "lecture_date": "2020-04-03"
+        },
+    ]
+  },
+  {
+    "course_id": "ANAT",
+    "course_name": "Living Anatomy",
+    "course_number": "6",
+    "lectures": [
+      {
+        "lecture_id": "ANAT1",
+        "lecture_name": "Anatomy 1",
+        "lecture_date": "2020-04-01"
+      },
+      {
+        "lecture_id": "ANAT2",
+        "lecture_name": "Anatomy 2",
+        "lecture_date": "2020-04-02"
+      },
+      {
+          "lecture_id": "ANAT3",
+          "lecture_name": "Anatomy 3",
+          "lecture_date": "2020-04-03"
+        },
+    ]
+  },
+  {
+    "course_id": "NEUR",
+    "course_name": "Neurokonsil",
+    "course_number": "7",
+    "lectures": [
+      {
+        "lecture_id": "NEUR1",
+        "lecture_name": "Neurokonsil 1",
+        "lecture_date": "2020-04-01"
+      },
+      {
+        "lecture_id": "NEUR2",
+        "lecture_name": "Neurokonsil 2",
+        "lecture_date": "2020-04-02"
+      },
+      {
+          "lecture_id": "NEUR3",
+          "lecture_name": "Neurokonsil 3",
+          "lecture_date": "2020-04-03"
+        },
+    ]
+  },
+  {
+  "course_id": "RTM",
+  "course_name": "Radiologisches Team-Meeting",
+  "course_number": "8",
+  "lectures": [
+    {
+      "lecture_id": "RTM1",
+      "lecture_name": "Radio 1",
+      "lecture_date": "2020-04-01"
+    },
+    {
+      "lecture_id": "RTM2",
+      "lecture_name": "Radio 2",
+      "lecture_date": "2020-04-02"
+    },
+    {
+        "lecture_id": "RTM3",
+        "lecture_name": "Radio 3",
+        "lecture_date": "2020-04-03"
+      },
+  ]
+},
+{
+    "course_id": "TACL",
+    "course_name": "Talk aus der Alumni Club Lounge",
+    "course_number": "9",
+    "lectures": [
+      {
+        "lecture_id": "TACL1",
+        "lecture_name": "Medizingeschichte mit Dr. C.",
+        "lecture_date": "2020-04-01"
+      },
+      {
+        "lecture_id": "TACL2",
+        "lecture_name": "Medizin und Ethik mit Dr. Martin R.",
+        "lecture_date": "2020-04-02"
+      },
+      {
+          "lecture_id": "TACL3",
+          "lecture_name": "Medizin, Umwelt und Klima mit Dr. A. V.",
+          "lecture_date": "2020-04-03"
+        },
+    ]
+  },
+  {
+    "course_id": "WAMB",
+    "course_name": "Webambulanz",
+    "course_number": "10",
+    "lectures": [
+      {
+        "lecture_id": "WAMB1",
+        "lecture_name": "Web 1",
+        "lecture_date": "2020-04-01"
+      },
+      {
+        "lecture_id": "WAMB2",
+        "lecture_name": "Web 2",
+        "lecture_date": "2020-04-02"
+      },
+      {
+          "lecture_id": "WAMB3",
+          "lecture_name": "Web 3",
+          "lecture_date": "2020-04-03"
+        },
+    ]
+  }
+];

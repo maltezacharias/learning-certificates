@@ -8,24 +8,13 @@
 <table class="table table-borderless table-hover">
 <form action="" method="post">
   <tr><td class="w-50">Kurswahl</td><td> 
-    <select id="Kurswahl" name="Kurswahl"> 
-      <option value="" disabled selected>- Bitte erst hier auswählen -</option>
-      <option value="AMSP">Allgemeinmedizinische Sprechstunde</option>
-      <option value="ACSU">Alumni-Club Students Skill Update</option>
-      <option value="DLT">Distance Learning Tertialfälle</option>
-      <option value="GMM">Good Medical Morning</option>
-      <option value="IFK">Interdisziplinäre Fallkonferenz 20S</option>
-      <option value="KPSY">Konsil Psychiatrie</option>
-      <option value="ANAT">Living Anatomy</option>
-      <option value="NEUR">Neurokonsil</option>
-      <option value="RTM">Radiologisches Team-Meeting</option>
-      <option value="TACL">Talk in der Alumni-Club-Lounge</option>
-      <option value="WAMB">Webambulanz</option>
+    <select id="course_name" name="course_name"> 
+      <option value="" disabled selected>- Bitte zuerst Kurs auswählen -</option>
     </select>
     </td></tr>
   <tr><td>Einheit</td><td> 
-    <select id="Kurstermin" name="Kurstermin">
-      <option value="" disabled selected>- Bitte erst oben auswählen -</option>
+    <select id="lecture_name" name="lecture_name">
+      <option value="" disabled selected>- Erst oben auswählen -</option>
     </select>
   </td></tr>
   <tr><td><label for="fileupload">Datei auswählen</label></td><td> <input type="file" id="fileupload" name="fileupload"> </td></tr>
@@ -34,7 +23,6 @@
 
 </form>
 </table>
-
 
 <br><br>
 <h3>FAQ/Tutorial/Info zum Download aus Moodle</h3><br>
@@ -48,7 +36,7 @@
 
 {% block javascripts %}
   {{ parent() }}
-  {{ encore_entry_script_tags('Upload') }}
+  {{ encore_entry_script_tags('upload') }}
 {% endblock javascripts %}
 
 {% endblock %}

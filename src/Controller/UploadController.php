@@ -11,7 +11,6 @@ class UploadController extends AbstractController
      */
     public function list()
     {
-        $number = random_int(0, 100);
         return $this->render('upload.html.twig',[]);
     }
 }
