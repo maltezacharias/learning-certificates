@@ -1,6 +1,6 @@
 // upload.js
 
-// var courses = JSON.parse(courses_raw);
+// let courses = JSON.parse(courses_raw);
 
 document.addEventListener("DOMContentLoaded", () => {
   // dynamically populate course names
