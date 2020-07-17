@@ -4,13 +4,13 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // dynamically populate course names
-  let course_name_select = document.querySelector("#course_name");
-  for (let i=0; i < courses.length; i++) {
+  let courseNameSelectElement = document.getElementById("course_name");
+  courses.forEach(course => {
     let courseoption = document.createElement("option");
-    courseoption.value = courses[i].course_number;
-    courseoption.text = courses[i].course_name;
-    course_name_select.appendChild(courseoption);
-  }
+    courseoption.value = course.course_number;
+    courseoption.text = course.course_name;
+    courseNameSelectElement.appendChild(courseoption);
+  })
 
   // dynamically populate lecture names for chosen course
   let lecture_name_select = document.querySelector('#lecture_name');
