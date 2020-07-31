@@ -45,3 +45,11 @@ symfony server:start
 ### Production
 
 tbd. 
+
+
+
+
+
+## Image Copyright
+
+["universiti"](https://svgsilh.com/ms/009688/image/48570.html) is licensed under [CC0 1.0](https://creativecommons.org/licenses/cc0/1.0/?ref=ccsearch&atype=rich)
