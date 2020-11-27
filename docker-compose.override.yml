@@ -1,0 +1,15 @@
+version: '3.8'
+
+# This file will be read by default when using docker-compose without -f parameter
+# Add bind mounts so that the development docker image uses the code from this directory
+# instead of the code from the docker image
+
+services:
+
+  learning-certificates:
+    volumes:
+      - './src:/learning-certificates/src'
+      - './config:/learning-certificates/config'
+      - './assets:/learning-certificates/assets'
+      - './templates:/learning-certificates/templates'
+      - './translations:/learning-certificates/translations'

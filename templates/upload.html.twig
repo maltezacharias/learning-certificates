@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<h2 class="mt-5">Upload Moodle-Bewertungslisten</h2>
+<p class="my-3">Moodle-Bewertungslisten (*.csv) können hier hochladen werden: </p>
+
+<br><br>  
+
+<table class="table table-borderless table-hover">
+<form action="" method="post">
+  <tr><td class="w-50">Kurswahl</td><td> 
+    <select id="course_name" name="course_name"> 
+      <option value="" disabled selected>- Bitte zuerst Kurs auswählen -</option>
+    </select>
+    </td></tr>
+  <tr><td>Einheit</td><td> 
+    <select id="lecture_name" name="lecture_name">
+      <option value="" disabled selected>- Erst oben auswählen -</option>
+    </select>
+  </td></tr>
+  <tr><td><label for="fileupload">Datei auswählen</label></td><td> <input type="file" id="fileupload" name="fileupload"> </td></tr>
+  <tr class="table-warning"><td><label for="safety">Ich bestätige hiermit, die Eingaben gewissenhaft und genau gemacht, sowie die korrekte Datei ausgewählt zu haben.</label></td><td><input type="checkbox" id="safety" name="safety" value="yes" required> </td></tr>
+  <tr><td> </td><td> <button type="submit" class="btn btn-primary">Hochladen</button> <button type="reset" class="btn btn-danger btn-sm">Zurücksetzen</button> </td></tr>
+
+</form>
+</table>
+
+<br><br>
+<h3>FAQ/Tutorial/Info zum Download aus Moodle</h3><br>
+<ol>
+  <li>Zuerst X auswählen</li>
+  <li>Dann Y klicken</li>
+  <li>Und Z.csv herunterladen</li>
+</ol>
+
+
+
+{% block javascripts %}
+  {{ parent() }}
+  {{ encore_entry_script_tags('upload') }}
+{% endblock javascripts %}
+
+{% endblock %}
